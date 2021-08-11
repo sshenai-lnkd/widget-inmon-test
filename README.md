@@ -1,1 +1,1 @@
-# widgetTest1
+# Inmon tests for widgets
