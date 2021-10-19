@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <style>
+        .input {
+            width: 600px;
+        }
+        .label {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body id="body" style="width:100%; height: 1000px">
+    <div>Third party website</div>
+    <script src="https://www.linkedin-ei.com/xdoor/scripts/in.js">
+        api_key: "956165lql90p3w"
+        extensions: OAuth @https://sshenai-lnkd.github.io/widget-inmon-test/oauth/oauth.js
+        userSessionEnabled: true
+    </script>
+    <script type="IN/OAuth" data-callback-method="onProfileData">
+            </script>
+    <div id="profile-data-container">
+        <div>Profile data will show here</div>
+        <div><label class="label">First Name</label><input class="input" type="text" id="firstname"></div>
+        <div><label class="label">Last Name</label><input class="input" type="text" id="lastname"></div>
+        <div><label class="label">Headline</label><input class="input" type="text" id="headline"></div>
+        <div><label class="label">Education</label><textarea rows="8" cols="50" class="input" type="text" id="education"></textarea></div>
+        <div><label class="label">Positions</label><textarea rows="8" cols="50" class="input" type="text" id="experience"></textarea></div>
+        <div><label class="label">Skills</label><textarea rows="8" cols="50" class="input" type="text" id="skills"></textarea></div>
+    </div>
+    <script>
+        function onProfileData(profileData) {
+            var firstnameField = document.getElementById('firstname');
+            var lastnameField = document.getElementById('lastname');
+            var headlineField = document.getElementById('headline');
+            var educationField = document.getElementById('education');
+            var experienceField = document.getElementById('experience')
+            var skillsField = document.getElementById('skills')
+            firstnameField.value = profileData.localizedFirstName;
+            lastnameField.value = profileData.localizedLastName;
+            educationField.value = JSON.stringify(profileData.educations);
+            headlineField.value = profileData.localizedHeadline;
+            experienceField.value = JSON.stringify(profileData.positions);
+            skillsField.value = JSON.stringify(profileData.skills);
+        }
+    </script>
+</body>
+
+</html>
