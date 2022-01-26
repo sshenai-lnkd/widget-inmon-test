@@ -9,41 +9,18 @@
  *
  */
 /* global IN */
-IN.tags.add('CompanyConnections', function ApplicantHighlights(node, core) {
+IN.tags.add('CompanyConnections', function CompanyConnections(node, core) {
     let tag = new IN.SDK.Tag(node, core);
   
     // Validate client parameters
     const integrationContext = tag.attributes["integration-context"];
-    const jobApplicationUrn = tag.attributes["li-job-application-id"];
-    const profileUrl = tag.attributes["li-applicant-profile-url"];
-    const applicantEmail = tag.attributes["applicant-email"];
-    const externalJobPostingId = tag.attributes["ats-job-posting-id"];
   
     if (!integrationContext) {
       throw new Error(
           "Applicant Highlights widget requires an integration-context"
       );
     }
-    if (!jobApplicationUrn && !externalJobPostingId) {
-      throw new Error(
-          "Job Application id or Job posting id parameters are required and missing"
-      );
-    }
-  
-    if (!jobApplicationUrn && externalJobPostingId && !(profileUrl || applicantEmail)) {
-      throw new Error(
-          "Either LinkedIn profile url or applicant email parameters are required."
-      );
-    }
-    const widgetParams = Object.assign(
-        {},
-        { apiKey: core.options.get("apiKey") },
-        integrationContext && { integrationContext },
-        jobApplicationUrn && { jobApplicationUrn },
-        externalJobPostingId && { externalJobPostingId },
-        applicantEmail && { applicantEmail },
-        profileUrl && { profileUrl }
-    );
+
     let iframe = new IN.SDK.EmbeddedWindow('https://sshenai-lnkd.github.io/widget-inmon-test/company-referrals/server.html', {
       attributes: {
         width: 420,
