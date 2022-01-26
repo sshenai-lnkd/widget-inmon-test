@@ -28,20 +28,28 @@ IN.tags.add('CompanyConnections', function CompanyConnections(node, core) {
         },
         method: 'GET'
     });
-    const client = new IN.SDK.Client(iframe);
 
-    // Refer event
-    client.on('refer', function(data) {
-        console.log("Refer event recieved", data);
-        let modalWindow = new IN.SDK.EmbeddedWindow('https://sshenai-lnkd.github.io/widget-inmon-test/company-referrals/referModal.html', {
-            attributes: {
-                width: 420,
-                height: 650,
-            },
-            method: 'GET'
-        });
-        tag.insert(modalWindow.self);
-    });
     tag.insert(iframe.self);
+  
+    let client = new IN.SDK.Client(iframe);
+    
+    // Refer event
+    client.on('ready', () => {
+        client.on('refer', (data) => {
+            console.log("Refer event recieved", data);
+          });
+  
+    });
+    // client.on('refer', function(data) {
+    //     console.log("Refer event recieved", data);
+    //     let modalWindow = new IN.SDK.EmbeddedWindow('https://sshenai-lnkd.github.io/widget-inmon-test/company-referrals/referModal.html', {
+    //         attributes: {
+    //             width: 420,
+    //             height: 650,
+    //         },
+    //         method: 'GET'
+    //     });
+    //     tag.insert(modalWindow.self);
+    // });
     return tag;
 });
