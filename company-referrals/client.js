@@ -32,16 +32,19 @@ IN.tags.add('CompanyConnections', function CompanyConnections(node, core) {
     const client = new IN.SDK.Client(iframe);
    
     // fire the xdoor 'refresh' event to reload the page on successful authentication
-    client.on('refer', function() {
-     let modalWindow  = new IN.SDK.EmbeddedWindow('https://sshenai-lnkd.github.io/widget-inmon-test/company-referrals/referModal.html', {
-      attributes: {
-        width: 420,
-        height: 650,
-      },
-      method: 'GET'
-        });
-      tag.insert(modalWindow.self);
+    client.on('ready', () => {
+        client.on('refer', function() {
+            let modalWindow  = new IN.SDK.EmbeddedWindow('https://sshenai-lnkd.github.io/widget-inmon-test/company-referrals/referModal.html', {
+             attributes: {
+               width: 420,
+               height: 650,
+             },
+             method: 'GET'
+               });
+             tag.insert(modalWindow.self);
+           });
     });
+
    
   
     return tag;
