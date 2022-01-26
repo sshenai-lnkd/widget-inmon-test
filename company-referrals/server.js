@@ -7,7 +7,7 @@
       .getElementById('referBtn')
       .addEventListener('click', (event) => {
         event.preventDefault();
-       this._server.send('refer')
+       this._server.send('refer', {key: 'Refer event'});
       });
 })();
 
