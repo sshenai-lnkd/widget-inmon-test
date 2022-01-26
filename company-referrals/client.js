@@ -28,9 +28,9 @@ IN.tags.add('CompanyConnections', function CompanyConnections(node, core) {
       },
       method: 'GET'
     });
-  
-    const client = new IN.SDK.Client(iframe);
     tag.insert(iframe.self);
+    const client = new IN.SDK.Client(iframe);
+   
     // fire the xdoor 'refresh' event to reload the page on successful authentication
     client.on('refer', function() {
      let modalWindow  = new IN.SDK.EmbeddedWindow('https://sshenai-lnkd.github.io/widget-inmon-test/company-referrals/referModal.html', {
