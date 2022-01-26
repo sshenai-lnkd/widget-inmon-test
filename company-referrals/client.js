@@ -28,7 +28,6 @@ IN.tags.add('CompanyConnections', function CompanyConnections(node, core) {
         },
         method: 'GET'
     });
-    tag.insert(iframe.self);
     const client = new IN.SDK.Client(iframe);
 
     // Refer event
@@ -43,5 +42,6 @@ IN.tags.add('CompanyConnections', function CompanyConnections(node, core) {
         });
         tag.insert(modalWindow.self);
     });
+    tag.insert(iframe.self);
     return tag;
 });
