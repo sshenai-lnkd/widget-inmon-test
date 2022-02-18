@@ -22,7 +22,7 @@ IN.tags.add('OAuth', class OAuth extends IN.SDK.Tag {
         anchor.style = "color: #0073b1;"
         div.appendChild(anchor);
         anchor.addEventListener('click', (data) => {
-            IN.user.authorizeV2('r_fullprofile').then((credentials) => {
+            IN.user.authorize('r_fullprofile').then((credentials) => {
                 // the user is now authenticated
                 const request = IN.api.request('/v2/me?projection=(certifications,certificationsOrder,honors,honorsOrder,localizedFirstName,localizedLastName,localizedHeadline,vanityName,location,positions,positionsOrder,skills,skillsOrder,educations,educationsOrder,skills,skillsOrder)', {}, IN);
                 request.then((data) => {
