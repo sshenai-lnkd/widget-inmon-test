@@ -18,7 +18,7 @@
     <script type="IN/AwliWidget" data-integration-context="urn:li:organization:1000" data-mode="BUTTON_DATA"
       data-callback-method="handleProfileData" data-height="50"></script>
   </div>
-  <div id="profile-data-container" class="container well">
+  <form id="profile-data-container" class="container well">
     <div>Profile data will show here</div>
     <div class="form-group">
       <label for="firstname">First Name</label>
@@ -45,7 +45,7 @@
       <label for="skills">Skills</label>
       <textarea rows="8" cols="50" class="form-control" type="text" id="skills"></textarea>
     </div>
-  </div>
+  </form>
   <script>
     function handleProfileData(profileData) {
       var firstnameField = document.getElementById('firstname');
