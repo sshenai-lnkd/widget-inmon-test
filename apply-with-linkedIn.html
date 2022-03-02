@@ -10,43 +10,62 @@
 
 <body id="body" class="container">
   <h3>Apply With LinkedIn 3.0</h3>
-  <div class="form-horizontal">
-    <div class="form-group">
-      <label for="size">Size</label>
-      <select class="form-select" id="size" aria-label="Default select example">
-        <option value="small">Small</option>
-        <option value="medium" selected>Medium</option>
-        <option value="large">Large</option>
-      </select>
+  <form>
+    <div class="form-group row">
+      <div class="col-sm-12 col-md-2 col-lg-2">
+        <label for="env">Environment</label>
+        <select class="form-select" id="env" aria-label="Default select example">
+          <option value="EI" selected>EI</option>
+          <option value="PROD">PROD</option>
+        </select>
+      </div>
+      <div class="col-sm-4">
+        <label for="data-api-key">API Key</label>
+        <input class="form-control" type="text" id="data-api-key" value="956165lql90p3w">
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2>
+        <label for="data-mode">Mode</label>
+        <select class="form-select" id="data-mode" aria-label="Default select example">
+          <option value="BUTTON_DATA" selected>BUTTON_DATA</option>
+          <option value="CONVERSION">CONVERSION</option>
+        </select>
+      </div>
+      <div class="col-sm-12 col-md-2 col-lg-2">
+        <label for="data-size">Size</label>
+        <select class="form-select" id="data-size" aria-label="Default select example">
+          <option value="small">Small</option>
+          <option value="medium" selected>Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+
+      <div class="col-sm-12 col-md-2 col-lg-2">
+        <label for="data-color">Color</label>
+        <select class="form-select" id="data-color" aria-label="Default select example">
+          <option value="blue" selected>Blue</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+        </select>
+      </div>
+      <button type="submit" style="width: 300px" class="btn btn-sm btn-primary">Update</button>
     </div>
-    <div class="form-group">
-      <label for="color">Color</label>
-      <select class="form-select" id="color" aria-label="Default select example">
-        <option value="blue" selected>Blue</option>
-        <option value="black">Black</option>
-        <option value="white">White</option>
-      </select>
-    </div>
+  </form>
+  <div class="widget-container'">
+
   </div>
   <script src="https://platform.linkedin-ei.com/xdoor/scripts/in.js">
     api_key: 956165lql90p3w
     extensions: AwliWidget @https://www.linkedin-ei.com/talentwidgets/extensions/apply-with-linkedin-widget
   </script>
   <div class="container">
-    <script type="IN/AwliWidget" 
-      data-integration-context="urn:li:organization:1000"
-      data-mode="BUTTON_DATA"
-      data-callback-method="handleProfileData"
-      data-height="50"
-      
-    ></script>
+    <script type="IN/AwliWidget" data-integration-context="urn:li:organization:1000" data-mode="BUTTON_DATA"
+      data-callback-method="handleProfileData" data-height="50"></script>
   </div>
   <form id="profile-data-container" class="container well">
     <h4>Profile data will show here</h4>
     <div class="form-group">
       <label for="firstname">First Name</label>
-      <input class="form-control"
-        type="text" id="firstname">
+      <input class="form-control" type="text" id="firstname">
     </div>
     <div class="form-group">
       <label for="lastname">Last Name</label>
