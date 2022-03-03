@@ -1,0 +1,20 @@
+{
+    "name": "ats-simulator",
+    "version": "1.0.0",
+    "description": "ATS Simulator for Apply Integration widgets",
+    "main": "app.js",
+    "repository": "ssh://git.corp.linkedin.com:29418/apply-integrations/ats-simulator",
+    "author": "Chris Wong <ciwong@linkedin.com>",
+    "license": "MIT",
+    "scripts": {
+      "start": "node app.js",
+      "startTestServer": "node awliServer.js"
+    },
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "express": "^4.17.1",
+      "node-forge": "^0.10.0",
+      "request": "^2.88.2"
+    }
+  }
+  
