@@ -6,7 +6,9 @@ function renderWidget(params, apiKey, env) {
     const widgetUrl = `https://www.linkedin${env === 'EI' ? '-ei' : ''}.com/talentwidgets/extensions/apply-with-linkedin-widget-v3`;
     xdoorElem.src = xdoorUrl;
     xdoorElem.innerHTML = `api_key:${apiKey}
-      extensions:AwliWidget@${widgetUrl}`;
+      extensions:AwliWidget@${widgetUrl}
+      userSessionEnabled: true
+      `;
 
     let widgetElem = document.createElement('script');
     widgetElem.type = 'IN/AwliWidget';
