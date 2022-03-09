@@ -3,7 +3,7 @@ function renderWidget(params, apiKey, env) {
     widgetContainerElem.innerHTML = '';
     let xdoorElem = document.createElement('script');
     const xdoorUrl = `https://platform.linkedin${env === 'EI' ? '-ei' : ''}.com/in.js`;
-    const widgetUrl = `https://www.linkedin${env === 'EI' ? '-ei' : ''}.com/talentwidgets/extensions/apply-with-linkedin-widget`;
+    const widgetUrl = `https://www.linkedin${env === 'EI' ? '-ei' : ''}.com/talentwidgets/extensions/apply-with-linkedin-widget-v3`;
     xdoorElem.src = xdoorUrl;
     xdoorElem.innerHTML = `api_key:${apiKey}
       extensions:AwliWidget@${widgetUrl}`;
