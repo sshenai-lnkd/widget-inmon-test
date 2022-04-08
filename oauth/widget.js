@@ -24,7 +24,7 @@ IN.tags.add('OAuth', class OAuth extends IN.SDK.Tag {
         anchor.addEventListener('click', (data) => {
             IN.user.authorizeV2('r_fullprofile').then((credentials) => {
                 // the user is now authenticated
-                const request = IN.api.request('/v2/me?projection=(certifications,certificationsOrder,honors,honorsOrder,localizedFirstName,localizedLastName,localizedHeadline,vanityName,location,positions,positionsOrder,skills,skillsOrder,educations,educationsOrder,skills,skillsOrder)', {}, IN);
+                const request = IN.api.request('/v2/applyWithLinkedInApplicantProfile', {}, IN);
                 request.then((data) => {
                   executeFunctionByName(profileDataCallback,window,data);
                 });
