@@ -8,6 +8,7 @@
     "license": "MIT",
     "scripts": {
       "start": "node app.js",
+      "start-server": "node server.js",
       "startTestServer": "node awliServer.js"
     },
     "dependencies": {

@@ -1,5 +1,15 @@
 <html>
-    <body>
-        Refer Modal
-    </body>
+
+<body style="background-color: pink; width: 100px; height: 100px">
+    Refer Modal
+    <script type="application/javascript" src="https://platform.linkedin.com/xdoor/scripts/in.js#mode=sdk"
+        defer></script>
+    <script async defer>
+        (function () {
+            let server = new IN.SDK.Server();
+            server.ready();
+        })();
+    </script>
+</body>
+
 </html>
