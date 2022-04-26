@@ -51,7 +51,6 @@ let modalContainer = createModalContainer();
 /* global IN */
 IN.tags.add('CompanyConnections', function CompanyConnections(node, core) {
     let tag = new IN.SDK.Tag(node, core);
-    const { SmartWindow } = core.Objects;
 
     // Validate client parameters
     const integrationContext = tag.attributes["integration-context"];
