@@ -106,7 +106,9 @@
     </div>
   </form>
   <script>
-    function handleProfileData(profileData) {
+    function handleProfileData(profileResponse) {
+      console.log('profileResponse', profileResponse);
+      const profileData = profileResponse.profileData;
       var firstnameField = document.getElementById('firstname');
       var lastnameField = document.getElementById('lastname');
       var headlineField = document.getElementById('headline');
