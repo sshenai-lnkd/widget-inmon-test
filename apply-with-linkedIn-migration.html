@@ -24,13 +24,8 @@
         data-allow-sign-in="true">
     </script>
   </div>
-  <form id="profile-data-container" class="container well">
-    <h4>Profile data will show here</h4>
-    <div class="form-group">
-      <label for="firstname">Profile response JSON</label>
-      <textarea class="form-control" type="text" id="response"></textarea>
-    </div>
-  </form>
+  <h4>Profile data will show here</h4>
+  <code class="form-control" type="text" id="response"></code>
   <script>
     function handleProfileData(profileData) {
       var responseTextArea = document.getElementById('response');
