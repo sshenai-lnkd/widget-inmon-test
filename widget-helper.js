@@ -16,6 +16,7 @@ function renderWidget(params, apiKey, env) {
         const paramValue = params[paramKey];
         widgetElem.setAttribute(paramKey,paramValue);
     }
+    widgetElem.setAttribute('data-company-job-code', '1221');
     widgetElem.setAttribute('data-callback-method', 'handleProfileData');
     // widgetElem.setAttribute('data-integration-context', params['data-integration-context']);
     // widgetElem.setAttribute('data-callback-method', 'handleProfileData');
